@@ -1,4 +1,5 @@
 from sklearn.cluster import kmeans_plusplus
+import numpy as np
 
 class KMeans_custom():
     # This function initializes the KMeans class
