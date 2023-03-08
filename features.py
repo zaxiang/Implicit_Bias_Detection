@@ -15,7 +15,7 @@ def normalize(series):
     return pd.Series(array_norm)
 
 
-def get_arrest_features(data):
+def arrest_features_label(data):
     """
     feature engineering for arrest dataset
     with normalization
@@ -68,10 +68,10 @@ def get_arrest_features(data):
 
     df_feature = df_feature.drop(columns=['index_x', 'index_y', 'index'])
 
-    return df_feature
+    return df_feature, arrest['Descent Code']
 
 
-def get_crime_features(data):
+def crime_features(data):
     """
     feature engineering for crime dataset
     """
