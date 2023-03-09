@@ -18,8 +18,8 @@ class KMenas_custom_runner():
         y = self.y.tolist()
         self.y_pred = self.KMeans_custom_model.predict(self.X)
 
-        self.df_results_custom = pd.concat({'race_label':pd.Series(y).map(race_code_dic), 
-                                       'grouping':pd.Series(self.y_pred)}, axis=1) 
+        self.df_results_custom = pd.concat({'race_label':pd.Series(y).map(race_code_dic).reset_index(), 
+                                       'grouping':pd.Series(self.y_pred).reset_index()}, axis=1) 
 
         return self.df_results_custom
 
