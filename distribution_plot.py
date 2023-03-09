@@ -9,9 +9,9 @@ def get_true_and_cluster_value(result_df):
     
     dic = {}
     
-    dic["true_dist"] = result_df.race_label.value_counts(normalize=True).values
+    dic["true_dist"] = result_df.race_label.value_counts(normalize=True)
     for clu in result_df['grouping'].unique():
-        dic["cluster "+str(clu)] = result_df[result_df['grouping'] == clu].race_label.value_counts(normalize=True).values
+        dic["cluster "+str(clu)] = result_df[result_df['grouping'] == clu].race_label.value_counts(normalize=True)
 
     return dic
     
