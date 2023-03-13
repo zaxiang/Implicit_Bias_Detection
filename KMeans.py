@@ -45,10 +45,12 @@ class KMeans_custom():
             for i in range(13, 13+27):
                 dis_part = (1/27 * (sub[i])**2) #assign alpha
                 centroid_dis += dis_part
-            #next 2 col: sex one-hot-encoding: 40-41
-            for i in range(40, 42):
-                dis_part = (1/2 * (sub[i])**2) #assign alpha
-                centroid_dis += dis_part
+                
+                #Removed Sex
+#             #next 2 col: sex one-hot-encoding: 40-41
+#             for i in range(40, 42):
+#                 dis_part = (1/2 * (sub[i])**2) #assign alpha
+#                 centroid_dis += dis_part
 
             centroid_dis = np.sqrt(centroid_dis)
             distance.append(centroid_dis)

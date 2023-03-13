@@ -54,9 +54,8 @@ def arrest_features_label(data):
     df_feature = pd.concat({'day':need_normalize[0], 'month':need_normalize[1], 
                             'hour':need_normalize[2], 'minute': need_normalize[3], 
                             'area':need_normalize[4], 
-                            'lat':need_normalize[5], 'lon':need_normalize[6], 
-                            'Age': need_normalize[7], 
-                            },axis=1)
+                            'lat':need_normalize[5], 'lon':need_normalize[6] 
+                            },axis=1) #removed Sex
 
     dummies_arrest = dummies_arrest.reset_index()
     dummies_charge = dummies_charge.reset_index()

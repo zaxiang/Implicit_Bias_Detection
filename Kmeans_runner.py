@@ -21,7 +21,7 @@ class KMenas_custom_runner():
         self.df_results_custom = pd.concat({'race_label':pd.Series(y).map(race_code_dic).reset_index(), 
                                        'grouping':pd.Series(self.y_pred).reset_index()}, axis=1) 
 
-        return self.df_results_custom
+        return self.df_results_custom, self.y_pred
 
     def get_center(self):
         self.center = self.KMeans_custom_model.get_centers()
