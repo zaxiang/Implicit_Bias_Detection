@@ -84,7 +84,7 @@ class KMeans_custom():
         self.centers = X[indices]
         
         for i in range(self.num_iter):
-            if i % 100 == 0:
+            if i % 10 == 0:
                 print(str(i), 'th iteration:')
         
             # new_centers are a 2d-array of 

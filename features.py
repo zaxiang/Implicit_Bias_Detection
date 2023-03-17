@@ -54,8 +54,9 @@ def arrest_features_label(data):
     df_feature = pd.concat({'day':need_normalize[0], 'month':need_normalize[1], 
                             'hour':need_normalize[2], 'minute': need_normalize[3], 
                             'area':need_normalize[4], 
-                            'lat':need_normalize[5], 'lon':need_normalize[6] 
-                            },axis=1) #removed Sex
+                            'lat':need_normalize[5], 'lon':need_normalize[6], 
+                            'age':need_normalize[7]
+                            },axis=1)
 
     dummies_arrest = dummies_arrest.reset_index()
     dummies_charge = dummies_charge.reset_index()
@@ -63,9 +64,9 @@ def arrest_features_label(data):
 
     df_feature = df_feature.merge(dummies_arrest, left_index=True, right_index=True)
     df_feature = df_feature.merge(dummies_charge, left_index=True, right_index=True)
-    df_feature = df_feature.merge(dummies_sex, left_index=True, right_index=True)
+#     df_feature = df_feature.merge(dummies_sex, left_index=True, right_index=True) #removed sex feature
 
-    df_feature = df_feature.drop(columns=['index_x', 'index_y', 'index'])
+    df_feature = df_feature.drop(columns=['index_x', 'index_y']) #removed 'index' since no longer merging sex df
 
     return df_feature, arrest['Descent Code']
 
